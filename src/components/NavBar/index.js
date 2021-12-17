@@ -27,10 +27,6 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: 18,
     },
   },
-  toolbar: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
   logo: {
     flex: 1,
     display: "flex",
@@ -48,7 +44,14 @@ const Header = (props) => {
 
   return (
     <AppBar id="nav-bar" className={classes.root}>
-      <Toolbar className={classes.toolbar} disableGutters>
+      <Toolbar
+        cx={{
+          display: "flex",
+          justifyContent: "space-between",
+          position: "relative",
+        }}
+        disableGutters
+      >
         <Box className={classes.logo}>
           <Link variant="h2" href="/" underline="none">
             JL
