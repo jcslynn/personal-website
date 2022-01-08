@@ -15,8 +15,8 @@ import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import messages from "./messages";
-import handleGoToWork from "../../events/scrollToWork";
-import handleGoToAbout from "../../events/scrollToAbout";
+import goToWork from "../../events/scrollToWork";
+import goToAbout from "../../events/scrollToAbout";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,6 +66,16 @@ function MenuList({ handleClick, anchorEl, handleClose }) {
   const classes = useStyles();
   const { formatMessage } = useIntl();
 
+  const handleGoToWork = (e) => {
+    goToWork(e);
+    handleClose();
+  };
+
+  const handleGoToAbout = (e) => {
+    goToAbout(e);
+    handleClose();
+  };
+
   return (
     <>
       <IconButton onClick={handleClick} id="menu-btn">
@@ -75,7 +85,6 @@ function MenuList({ handleClick, anchorEl, handleClose }) {
         id="link-menu"
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        onClick={handleClose}
         anchorEl={anchorEl}
         sx={{ flexDirection: "column" }}
         anchorOrigin={{
@@ -143,7 +152,7 @@ const Header = (props) => {
             <Link
               className={classes.links}
               variant="h3"
-              onClick={handleGoToWork}
+              onClick={goToWork}
               underline="hover"
             >
               {formatMessage(messages.work)}
@@ -151,7 +160,7 @@ const Header = (props) => {
             <Link
               className={classes.links}
               variant="h3"
-              onClick={handleGoToAbout}
+              onClick={goToAbout}
               underline="hover"
             >
               {formatMessage(messages.about)}

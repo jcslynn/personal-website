@@ -1,4 +1,4 @@
-const handleGoToTop = (e) => {
+const goToTop = (e) => {
   e.preventDefault();
   window.scrollTo({
     top: 0,
@@ -6,4 +6,4 @@ const handleGoToTop = (e) => {
   });
 };
 
-export default handleGoToTop;
+export default goToTop;

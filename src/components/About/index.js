@@ -5,7 +5,7 @@ import { useIntl } from "react-intl";
 import Image from "next/image";
 import Container from "../ResponsiveContainer";
 import messages from "./messages";
-import handleGoToTop from "../../events/scrollToTop";
+import goToTop from "../../events/scrollToTop";
 
 const useStyles = makeStyles((theme) => ({
   about: {
@@ -104,7 +104,7 @@ export default function About() {
         className={classes.goUp}
         variant="h3"
         underline="hover"
-        onClick={handleGoToTop}
+        onClick={goToTop}
       >
         {formatMessage(messages.top)}
         <ArrowUpward sx={{ fontSize: 20, color: "#292929", marginLeft: 0.5 }} />

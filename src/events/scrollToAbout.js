@@ -1,4 +1,4 @@
-const handleGoToAbout = (e) => {
+const goToAbout = (e) => {
   e.preventDefault();
   const headerOffset = document.getElementById("nav-bar").clientHeight;
   const elementPosition = document.getElementById("about").offsetTop;
@@ -9,4 +9,4 @@ const handleGoToAbout = (e) => {
   });
 };
 
-export default handleGoToAbout;
+export default goToAbout;

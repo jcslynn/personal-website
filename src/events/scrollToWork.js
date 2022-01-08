@@ -1,4 +1,4 @@
-const handleGoToWork = (e) => {
+const goToWork = (e) => {
   e.preventDefault();
   const headerOffset = document.getElementById("nav-bar").clientHeight;
   const elementPosition =
@@ -13,4 +13,4 @@ const handleGoToWork = (e) => {
   // document.getElementById('work').scrollIntoView({ behavior: 'smooth'})
 };
 
-export default handleGoToWork;
+export default goToWork;

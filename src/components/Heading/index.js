@@ -3,7 +3,7 @@ import { Box, Link, Typography } from "@mui/material";
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
 import Container from "../ResponsiveContainer";
 import messages from "./messages";
-import handleGoToWork from "../../events/scrollToWork";
+import goToWork from "../../events/scrollToWork";
 
 export default function Heading() {
   const { formatMessage } = useIntl();
@@ -44,7 +44,7 @@ export default function Heading() {
           id="work-header"
           underline="hover"
           sx={{ display: "flex", cursor: "pointer" }}
-          onClick={handleGoToWork}
+          onClick={goToWork}
         >
           <Typography variant="h2">{formatMessage(messages.myWork)}</Typography>
           <ArrowDownward
