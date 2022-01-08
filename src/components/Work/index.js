@@ -39,6 +39,7 @@ export default function Work() {
         videoId="ieRDryJabtI"
         title={formatMessage(messages.youcodia)}
         content={formatMessage(messages.youcodiaContent)}
+        moreLink="https://www.youcodia.com/"
       />
       <WorkItem
         key="academy"
@@ -47,6 +48,7 @@ export default function Work() {
         videoId="UK65odJSo6M"
         title={formatMessage(messages.academy)}
         content={formatMessage(messages.academyContent)}
+        moreLink="https://www.projectc-ygn.org/youcodia-school"
       />
     </Box>
   );

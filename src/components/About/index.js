@@ -1,11 +1,11 @@
-import { Box, Grid, Typography, Link } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import ArrowUpward from "@mui/icons-material/ArrowUpward";
 import makeStyles from "@mui/styles/makeStyles";
 import { useIntl } from "react-intl";
 import Image from "next/image";
 import messages from "./messages";
 import handleGoToTop from "../../events/scrollToTop";
-import image from '../../../public/images/me.jpeg'
+// import image from '../../../public/images/me.jpeg'
 
 const useStyles = makeStyles((theme) => ({
   root: {

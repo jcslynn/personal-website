@@ -4,7 +4,14 @@ import ArrowDiag from "@mui/icons-material/CallMade";
 import YouTube from "react-youtube";
 import messages from "./messages";
 
-export default function WorkItem({ sx, videoId, title, id, content }) {
+export default function WorkItem({
+  sx,
+  videoId,
+  title,
+  id,
+  content,
+  moreLink,
+}) {
   const { formatMessage } = useIntl();
 
   const onReady = (e) => e.target.pauseVideo();
@@ -33,6 +40,9 @@ export default function WorkItem({ sx, videoId, title, id, content }) {
         </Typography>
         <Link
           variant="h3"
+          href={moreLink}
+          target="_blank"
+          rel="noreferrer noopener"
           sx={{
             cursor: "pointer",
             flex: 1,

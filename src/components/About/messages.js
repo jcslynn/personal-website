@@ -18,10 +18,11 @@ export default defineMessages({
   },
   content: {
     id: `${scope}.content`,
-    defaultMessage: "Hello, I’m Jonathan Lynn, a full stack software engineer with over 3 years of experience in the education industry.",
+    defaultMessage:
+      "Hello, I’m Jonathan Lynn, a full stack software engineer with over 3 years of experience in the education and non-profit industry. Besides working with web and mobile technologies, I am passionate about creating technical solutions that tackle societal issues in marginality, poverty, and inequality through approaches that involve disciplines beyond just computer science.",
   },
   resume: {
     id: `${scope}.resume`,
-    defaultMessage: "Resume",
-  }
+    defaultMessage: "My Resume",
+  },
 });
