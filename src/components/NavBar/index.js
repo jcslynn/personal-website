@@ -75,6 +75,7 @@ function MenuList({ handleClick, anchorEl, handleClose }) {
         id="link-menu"
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        onClick={handleClose}
         anchorEl={anchorEl}
         sx={{ flexDirection: "column" }}
         anchorOrigin={{
