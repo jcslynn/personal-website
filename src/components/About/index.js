@@ -3,47 +3,47 @@ import ArrowUpward from "@mui/icons-material/ArrowUpward";
 import makeStyles from "@mui/styles/makeStyles";
 import { useIntl } from "react-intl";
 import Image from "next/image";
+import Container from "../ResponsiveContainer";
 import messages from "./messages";
 import handleGoToTop from "../../events/scrollToTop";
-// import image from '../../../public/images/me.jpeg'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    minHeight: "80vh",
-    background: "rgba(196, 196, 196, 0.25)",
-    display: "flex",
-    flexDirection: "column",
-    // alignItems: "center",
-    justifyContent: "space-between",
+  about: {
+    flex: 1,
+    paddingTop: theme.spacing(4),
+    paddingLeft: theme.spacing(10),
+    maxWidth: "50vh",
 
-    [theme.breakpoints.up("lg")]: {
-      paddingLeft: 160,
-      paddingRight: 160,
+    [theme.breakpoints.down("md")]: {
+      paddingTop: theme.spacing(10),
+      paddingLeft: 0,
+      paddingBottom: theme.spacing(4),
     },
 
-    [theme.breakpoints.between("sm", "lg")]: {
-      paddingLeft: 138,
-      paddingRight: 138,
-    },
-
-    [theme.breakpoints.down("sm")]: {
-      paddingLeft: 18,
-      paddingRight: 18,
+    [theme.breakpoints.up("xl")]: {
+      paddingLeft: theme.spacing(16),
     },
   },
-  sectionItem: {
-    padding: "0 59px 143px",
-    maxWidth: 532,
+  goUp: {
+    display: "flex",
+    justifyContent: "flex-end",
+    cursor: "pointer",
+    marginBottom: theme.spacing(15),
+    marginTop: theme.spacing(5),
 
-    [theme.breakpoints.down("xl")]: {
-      padding: "0 24px 143px",
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "flex-start",
     },
   },
   section: {
     marginTop: 126,
     display: "flex",
     flexDirection: "row",
+
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
   },
 }));
 
@@ -51,7 +51,17 @@ export default function About() {
   const classes = useStyles();
   const { formatMessage } = useIntl();
   return (
-    <Box className={classes.root} id="about">
+    <Container
+      id="about"
+      sx={{
+        width: "100%",
+        minHeight: "80vh",
+        background: "rgba(196, 196, 196, 0.25)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
       <Box className={classes.section}>
         <Box
           sx={{
@@ -68,11 +78,12 @@ export default function About() {
             objectFit="cover"
           />
         </Box>
-        <Box sx={{ flex: 1, paddingTop: 4, paddingLeft: 10, maxWidth: "50vh" }}>
+        <Box className={classes.about}>
           <Typography variant="body1">
             {formatMessage(messages.content)}
           </Typography>
           <Box
+            id="resume"
             sx={{ marginTop: 6, display: "flex", justifyContent: "flex-end" }}
           >
             <Link
@@ -89,19 +100,15 @@ export default function About() {
         </Box>
       </Box>
       <Link
+        id="backToTop"
+        className={classes.goUp}
         variant="h3"
         underline="hover"
-        sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          cursor: "pointer",
-          marginBottom: 10,
-        }}
         onClick={handleGoToTop}
       >
         {formatMessage(messages.top)}
         <ArrowUpward sx={{ fontSize: 20, color: "#292929", marginLeft: 0.5 }} />
       </Link>
-    </Box>
+    </Container>
   );
 }

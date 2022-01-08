@@ -1,8 +1,10 @@
 import { useIntl } from "react-intl";
 import { Box, Link, Typography } from "@mui/material";
 import ArrowDiag from "@mui/icons-material/CallMade";
-import YouTube from "react-youtube";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import messages from "./messages";
+import YoutubeVideo from "../YoutubeVideo";
 
 export default function WorkItem({
   sx,
@@ -13,20 +15,23 @@ export default function WorkItem({
   moreLink,
 }) {
   const { formatMessage } = useIntl();
+  const theme = useTheme();
+  const medium = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const onReady = (e) => e.target.pauseVideo();
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: medium ? "column" : "row",
+        alignItems: medium ? "center" : "",
         paddingBottom: 12,
         ...sx,
       }}
     >
       <Box
         sx={{
-          paddingRight: 16,
+          paddingRight: medium ? 0 : 16,
+          paddingBottom: medium ? 10 : 0,
           flex: 1,
           display: "flex",
           flexDirection: "column",
@@ -60,11 +65,7 @@ export default function WorkItem({
           />
         </Link>
       </Box>
-      <YouTube
-        videoId={videoId}
-        opts={{ height: 364, width: 640 }}
-        onReady={onReady}
-      />
+      <YoutubeVideo fullWidth={medium} title={title} embedId={videoId} />
     </Box>
   );
 }

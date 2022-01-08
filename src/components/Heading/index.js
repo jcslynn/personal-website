@@ -1,41 +1,24 @@
 import { useIntl } from "react-intl";
-import makeStyles from "@mui/styles/makeStyles";
 import { Box, Link, Typography } from "@mui/material";
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
+import Container from "../ResponsiveContainer";
 import messages from "./messages";
 import handleGoToWork from "../../events/scrollToWork";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginTop: 240,
-    minHeight: "calc(85vh - 240px)",
-    display: "flex",
-    justifyContent: "flex-end",
-    flexDirection: "column",
-
-    [theme.breakpoints.up("lg")]: {
-      paddingLeft: 160,
-      paddingRight: 160,
-    },
-
-    [theme.breakpoints.between("sm", "lg")]: {
-      paddingLeft: 138,
-      paddingRight: 138,
-    },
-
-    [theme.breakpoints.down("sm")]: {
-      paddingLeft: 18,
-      paddingRight: 18,
-    },
-  },
-}));
-
 export default function Heading() {
   const { formatMessage } = useIntl();
-  const classes = useStyles();
 
   return (
-    <div className={classes.root} id="heading">
+    <Container
+      id="heading"
+      sx={{
+        marginTop: "240px",
+        minHeight: "calc(85vh - 240px)",
+        display: "flex",
+        justifyContent: "flex-end",
+        flexDirection: "column",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -54,7 +37,7 @@ export default function Heading() {
           display: "flex",
           flexDirection: "row",
           justifyContent: "flex-end",
-          paddingTop: '30vh',
+          paddingTop: "30vh",
         }}
       >
         <Link
@@ -69,6 +52,6 @@ export default function Heading() {
           />
         </Link>
       </Box>
-    </div>
+    </Container>
   );
 }

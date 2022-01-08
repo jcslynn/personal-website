@@ -1,7 +1,7 @@
-import { createTheme, adaptV4Theme } from "@mui/material/styles";
+import { createTheme,  } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
-const theme = createTheme(adaptV4Theme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#292929",
@@ -15,6 +15,9 @@ const theme = createTheme(adaptV4Theme({
     background: {
       default: "#f8f8f8",
     },
+    action: {
+      main: "#494949",
+    }
   },
   typography: {
     fontFamily: "'DM Sans', sans-serif",
@@ -35,7 +38,6 @@ const theme = createTheme(adaptV4Theme({
       fontStyle: "normal",
       fontWeight: 500,
       color: "#494949",
-
     },
     h4: {
       fontSize: 18,
@@ -68,5 +70,5 @@ const theme = createTheme(adaptV4Theme({
       textAlign: "center",
     },
   },
-}));
+});
 export default theme;

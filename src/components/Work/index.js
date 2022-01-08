@@ -1,37 +1,15 @@
 import { useIntl } from "react-intl";
-import { Box } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
 import WorkItem from "./item";
+import Container from "../ResponsiveContainer";
 import messages from "./messages";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    paddingTop: "15vh",
-    paddingBottom: 84,
-    minHeight: "100vh",
-
-    [theme.breakpoints.up("lg")]: {
-      paddingLeft: 160,
-      paddingRight: 160,
-    },
-
-    [theme.breakpoints.between("sm", "lg")]: {
-      paddingLeft: 138,
-      paddingRight: 138,
-    },
-
-    [theme.breakpoints.down("sm")]: {
-      paddingLeft: 18,
-      paddingRight: 18,
-    },
-  },
-}));
 
 export default function Work() {
   const { formatMessage } = useIntl();
-  const classes = useStyles();
   return (
-    <Box id="work" className={classes.root}>
+    <Container
+      id="work"
+      sx={{ paddingTop: "15vh", paddingBottom: "84px", minHeight: "100vh" }}
+    >
       <WorkItem
         key="youCodia"
         id="01"
@@ -50,6 +28,6 @@ export default function Work() {
         content={formatMessage(messages.academyContent)}
         moreLink="https://www.projectc-ygn.org/youcodia-school"
       />
-    </Box>
+    </Container>
   );
 }
