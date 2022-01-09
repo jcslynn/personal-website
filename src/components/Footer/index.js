@@ -61,7 +61,7 @@ export default function Footer() {
               </IconButton>
               <IconButton
                 id="linkedIn"
-                href="https://linkedin.com/in/jonathansclynn"
+                href="https://linkedin.com/in/jonathancslynn"
                 rel="noopener noreferrer"
                 target="_blank"
                 sx={{ marginRight: 1 }}
@@ -94,7 +94,7 @@ export default function Footer() {
                 id="linkedIn"
                 underline="hover"
                 variant="h3"
-                href="https://linkedin.com/in/jonathansclynn"
+                href="https://linkedin.com/in/jonathancslynn"
                 rel="noopener noreferrer"
                 target="_blank"
               >
