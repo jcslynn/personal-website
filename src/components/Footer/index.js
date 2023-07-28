@@ -3,7 +3,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import { useIntl } from "react-intl";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import GithubIcon from "@mui/icons-material/Github";
+import GithubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/AlternateEmail";
 import Container from "../ResponsiveContainer";
